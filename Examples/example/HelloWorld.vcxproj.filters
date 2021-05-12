@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)misc\natvis\aspose_types.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\RunExamples.cpp" />
+    <ClCompile Include="source\CustomTeXFormatFileCreation\CustomTeXFormatFileCreation.cpp" />
+    <ClCompile Include="source\FileSystemInputOutputAndXpsOutput\FileSystemInputOutputAndXpsOutput.cpp" />
+    <ClCompile Include="source\LoadLicenseFromFile\LoadLicenseFromFile.cpp" />
+    <ClCompile Include="source\LoadLicenseFromStream\LoadLicenseFromStream.cpp" />
+    <ClCompile Include="source\OverridenJobNameAndTerminalOutputWrittenToDisk\OverridenJobNameAndTerminalOutputWrittenToDisk.cpp" />
+    <ClCompile Include="source\OverridenJobNameAndTerminalOutputWrittenToZip\OverridenJobNameAndTerminalOutputWrittenToZip.cpp" />
+    <ClCompile Include="source\StreamInputImageOutputAndTerminalInput\StreamInputImageOutputAndTerminalInput.cpp" />
+    <ClCompile Include="source\TypesetPdfWrittenToExternalStream\TypesetPdfWrittenToExternalStream.cpp" />
+    <ClCompile Include="source\TypesetWithCustomTeXFormat\TypesetWithCustomTeXFormat.cpp" />
+    <ClCompile Include="source\TypesetXpsWrittenToExternalStream\TypesetXpsWrittenToExternalStream.cpp" />
+    <ClCompile Include="source\ZipFileInputOuputAndPdfOutput\ZipFileInputOuputAndPdfOutput.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="include\targetver.h" />
+    <ClInclude Include="source\CustomTeXFormatFileCreation\CustomTeXFormatFileCreation.h" />
+    <ClInclude Include="source\FileSystemInputOutputAndXpsOutput\FileSystemInputOutputAndXpsOutput.h" />
+    <ClInclude Include="source\LoadLicenseFromFile\LoadLicenseFromFile.h" />
+    <ClInclude Include="source\LoadLicenseFromStream\LoadLicenseFromStream.h" />
+    <ClInclude Include="source\OverridenJobNameAndTerminalOutputWrittenToDisk\OverridenJobNameAndTerminalOutputWrittenToDisk.h" />
+    <ClInclude Include="source\OverridenJobNameAndTerminalOutputWrittenToZip\OverridenJobNameAndTerminalOutputWrittenToZip.h" />
+    <ClInclude Include="source\StreamInputImageOutputAndTerminalInput\StreamInputImageOutputAndTerminalInput.h" />
+    <ClInclude Include="source\TypesetPdfWrittenToExternalStream\TypesetPdfWrittenToExternalStream.h" />
+    <ClInclude Include="source\TypesetWithCustomTeXFormat\TypesetWithCustomTeXFormat.h" />
+    <ClInclude Include="source\TypesetXpsWrittenToExternalStream\TypesetXpsWrittenToExternalStream.h" />
+    <ClInclude Include="source\ZipFileInputOuputAndPdfOutput\ZipFileInputOuputAndPdfOutput.h" />
+    <ClInclude Include="include\RunExamples.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="../ReadMe.txt" />
+  </ItemGroup>
+</Project>

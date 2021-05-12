@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C5E40D21-7544-4938-91E2-1DED359BB346}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HelloWorld</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('Release'))" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('Release'))">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="$(Configuration.Contains('Debug'))">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CONSOLE;_DEBUG;DEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;DISABLE_EXTERNAL_REFCOUNT;GTEST_HAS_PTHREAD=0;BOOST_ALL_NO_LIB;U_STATIC_IMPLEMENTATION;LIBXML_STATIC;LIBXSLT_STATIC;SK_INTERNAL;SK_GAMMA_SRGB;SK_GAMMA_APPLY_TO_A8;SK_SCALAR_TO_FLOAT_EXCLUDED;SK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1;SK_SUPPORT_GPU=0;SK_SUPPORT_OPENCL=0;SK_FORCE_DISTANCE_FIELD_TEXT=0;GR_GL_FUNCTION_TYPE=__stdcall;SK_A32_SHIFT=24;SK_R32_SHIFT=16;SK_G32_SHIFT=8;SK_B32_SHIFT=0;SK_DEVELOPER=1;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild>false</MinimalRebuild>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="$(Configuration.Contains('Release'))">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;BOOST_ALL_NO_LIB;DISABLE_EXTERNAL_REFCOUNT;U_STATIC_IMPLEMENTATION;LIBXML_STATIC;LIBXSLT_STATIC;SK_INTERNAL;SK_GAMMA_SRGB;SK_GAMMA_APPLY_TO_A8;SK_SCALAR_TO_FLOAT_EXCLUDED;SK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1;SK_SUPPORT_GPU=0;SK_SUPPORT_OPENCL=0;SK_FORCE_DISTANCE_FIELD_TEXT=0;GR_GL_FUNCTION_TYPE=__stdcall;SK_A32_SHIFT=24;SK_R32_SHIFT=16;SK_G32_SHIFT=8;SK_B32_SHIFT=0;SK_DEVELOPER=1;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="../ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\RunExamples.h" />
+    <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="include\targetver.h" />
+    <ClCompile Include="source\RunExamples.cpp" />
+    <ClCompile Include="source\CustomTeXFormatFileCreation\CustomTeXFormatFileCreation.cpp" />
+    <ClInclude Include="source\CustomTeXFormatFileCreation\CustomTeXFormatFileCreation.h" />
+    <ClCompile Include="source\FileSystemInputOutputAndXpsOutput\FileSystemInputOutputAndXpsOutput.cpp" />
+    <ClInclude Include="source\FileSystemInputOutputAndXpsOutput\FileSystemInputOutputAndXpsOutput.h" />
+    <ClCompile Include="source\LoadLicenseFromFile\LoadLicenseFromFile.cpp" />
+    <ClInclude Include="source\LoadLicenseFromFile\LoadLicenseFromFile.h" />
+    <ClCompile Include="source\LoadLicenseFromStream\LoadLicenseFromStream.cpp" />
+    <ClInclude Include="source\LoadLicenseFromStream\LoadLicenseFromStream.h" />
+    <ClCompile Include="source\OverridenJobNameAndTerminalOutputWrittenToDisk\OverridenJobNameAndTerminalOutputWrittenToDisk.cpp" />
+    <ClInclude Include="source\OverridenJobNameAndTerminalOutputWrittenToDisk\OverridenJobNameAndTerminalOutputWrittenToDisk.h" />
+    <ClCompile Include="source\OverridenJobNameAndTerminalOutputWrittenToZip\OverridenJobNameAndTerminalOutputWrittenToZip.cpp" />
+    <ClInclude Include="source\OverridenJobNameAndTerminalOutputWrittenToZip\OverridenJobNameAndTerminalOutputWrittenToZip.h" />
+    <ClCompile Include="source\StreamInputImageOutputAndTerminalInput\StreamInputImageOutputAndTerminalInput.cpp" />
+    <ClInclude Include="source\StreamInputImageOutputAndTerminalInput\StreamInputImageOutputAndTerminalInput.h" />
+    <ClCompile Include="source\TypesetPdfWrittenToExternalStream\TypesetPdfWrittenToExternalStream.cpp" />
+    <ClInclude Include="source\TypesetPdfWrittenToExternalStream\TypesetPdfWrittenToExternalStream.h" />
+    <ClCompile Include="source\TypesetWithCustomTeXFormat\TypesetWithCustomTeXFormat.cpp" />
+    <ClInclude Include="source\TypesetWithCustomTeXFormat\TypesetWithCustomTeXFormat.h" />
+    <ClCompile Include="source\TypesetXpsWrittenToExternalStream\TypesetXpsWrittenToExternalStream.cpp" />
+    <ClInclude Include="source\TypesetXpsWrittenToExternalStream\TypesetXpsWrittenToExternalStream.h" />
+    <ClCompile Include="source\ZipFileInputOuputAndPdfOutput\ZipFileInputOuputAndPdfOutput.cpp" />
+    <ClInclude Include="source\ZipFileInputOuputAndPdfOutput\ZipFileInputOuputAndPdfOutput.h" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
